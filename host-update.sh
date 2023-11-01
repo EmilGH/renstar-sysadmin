@@ -39,6 +39,18 @@ then
 	echo
 fi
 
+if [ -f "/opt/Plex-Updater/update-plex.sh" ]
+then
+	echo Updating PLEX...
+	echo
+
+	/usr/bin/sudo /opt/Plex-Updater/update-plex.sh
+
+	echo
+	echo PLEX Update Complete.
+	echo
+fi
+
 echo Host Update Complete.
 echo
 echo Have a _____ day.
