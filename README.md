@@ -1,3 +1,3 @@
 # Renstar-SysAdmin
 
-System administration tools for Renstar Global *nix Systems
+System Administration tools for Renstar Global *nix Systems
