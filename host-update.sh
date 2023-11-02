@@ -6,6 +6,21 @@ echo Renstar Global LLC - Generic Host Update Utility *nix Systems v1
 echo ================================================================================
 echo
 
+if [ -f "/opt/Plex-Updater/update-plex.sh" ]
+then
+	echo PLEX Detected
+	echo Updating PLEX...
+	echo
+
+	/usr/bin/sudo /opt/Plex-Updater/update-plex.sh
+
+	echo
+	echo PLEX Update Complete.
+	echo
+fi
+
+
+
 echo Updating APT Packages... Please Wait.
 echo
 
@@ -17,6 +32,7 @@ echo
 
 if [ -f "/usr/local/bin/pihole" ]
 then
+	echo Pi-Hole Detected
 	echo Updating Pi-Hole...
 	echo
 
@@ -29,6 +45,7 @@ fi
 
 if [ -f "/usr/local/bin/hb-service" ]
 then
+	echo Homebridge Detected
 	echo Updating Homebridge NODE...
 	echo
 
@@ -36,18 +53,6 @@ then
 
 	echo
 	echo Homebridge Node Update Complete.
-	echo
-fi
-
-if [ -f "/opt/Plex-Updater/update-plex.sh" ]
-then
-	echo Updating PLEX...
-	echo
-
-	/usr/bin/sudo /opt/Plex-Updater/update-plex.sh
-
-	echo
-	echo PLEX Update Complete.
 	echo
 fi
 
