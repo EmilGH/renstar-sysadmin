@@ -17,13 +17,17 @@ echo
 
 echo Installing Config Files... Please Wait.
 
-# .plan
-# .profile
-# .bashrc
-# .bash_logout
-# .bash_aliases
-# /etc/ profile
-# /etc/ bashrc
+/usr/bin/sudo /usr/bin/cp ./zzzzzzzzzz_plan ~/.plan
+/usr/bin/sudo /usr/bin/chown $(id -u):$(id -g) ~/.plan
+
+/usr/bin/sudo /usr/bin/cp ./zzzzzzzzzz_bash_aliases ~/.bash_aliases
+/usr/bin/sudo /usr/bin/chown $(id -u):$(id -g) ~/.bash_aliases
+
+/usr/bin/sudo /usr/bin/cp ./zzzzzzzzzz_bash_logout ~/.bash_logout
+/usr/bin/sudo /usr/bin/chown $(id -u):$(id -g) ~/.bash_logout
+
+/usr/bin/sudo /usr/bin/cp ./zzzzzzzzzz_fortune.sh /etc/profile.d/zzzzzzzzzz_fortune.sh
+/usr/bin/sudo /usr/bin/chmod 755 /etc/profile.d/zzzzzzzzzz_fortune.sh
 
 echo Have a _____ day.
 echo
