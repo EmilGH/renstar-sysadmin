@@ -9,7 +9,7 @@ if [ "$SHLVL" = 1 ]; then
 
 	echo
 
-	/usr/bin/fortune | /usr/bin/cowsay | /usr/bin/lolcat
+	/usr/games/fortune -n 100 | /usr/games/cowsay | /usr/games/lolcat
 
-  echo
+	echo
 fi
