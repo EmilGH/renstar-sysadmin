@@ -1,3 +1,6 @@
+#! /bin/bash
+
+echo
 echo This is a private system owned and operated by Renstar Global LLC.
 echo
 echo Before processing any information, check the security accreditation level of this system
