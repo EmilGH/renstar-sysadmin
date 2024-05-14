@@ -50,6 +50,7 @@ alias showBlocked='sudo ipfw list'
 alias show_options='shopt'
 alias sl='ls'
 alias ssh-showkeys='tail +1 ~/.ssh/*.pub'
+alias ssh-keyshare() { cat ~/.ssh/id_rsa.pub | ssh "$1" 'cat >> ~/.ssh/authorized_keys'; }
 alias ttop='top -R -F -s 10 -o rsize'
 alias which='type -all'
 alias ~='cd ~'
