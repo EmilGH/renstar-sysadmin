@@ -61,3 +61,7 @@ alias ~='cd ~'
 ssh-keyshare() { cat ~/.ssh/id_rsa.pub | ssh "$1" 'cat >> ~/.ssh/authorized_keys'; }
 
 export LC_COLLATE="C"
+
+if [ -f ~/.bash_aliases_local ]; then
+    . ~/.bash_aliases_local
+fi
