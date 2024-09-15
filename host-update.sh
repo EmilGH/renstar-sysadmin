@@ -24,7 +24,7 @@ fi
 echo Updating APT Packages... Please Wait.
 echo
 
-/usr/bin/sudo /usr/bin/apt update && /usr/bin/sudo /usr/bin/apt upgrade -y && /usr/bin/sudo /usr/bin/apt autoremove
+/usr/bin/sudo /usr/bin/nala update && /usr/bin/sudo /usr/bin/nala upgrade -y && /usr/bin/sudo /usr/bin/nala autoremove
 
 echo
 echo APT Package Update Complete.
