@@ -9,7 +9,7 @@ echo
 echo Installing APT Packages... Please Wait.
 echo
 
-/usr/bin/sudo /usr/bin/apt update && /usr/bin/sudo /usr/bin/apt install neofetch lolcat fortune ncdu mc cowsay inxi ansiweather figlet eza  bat dust btop nala gping micro fd-find
+/usr/bin/sudo /usr/bin/apt update && /usr/bin/sudo /usr/bin/apt install neofetch lolcat fortune ncdu mc cowsay inxi ansiweather figlet eza bat duf btop nala gping micro fd-find
 
 echo
 echo APT Package Installation Complete.
