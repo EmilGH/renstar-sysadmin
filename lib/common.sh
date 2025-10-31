@@ -122,9 +122,20 @@ backup_file() {
 create_log_dir() {
     local log_dir="${LOG_DIR:-/var/log/renstar-sysadmin}"
 
-    if [[ ! -d "$log_dir" ]]; then
-        sudo mkdir -p "$log_dir"
-        sudo chmod 755 "$log_dir"
+    # Try to create system log directory if running with sudo
+    if [[ ! -d "$log_dir" ]] && sudo -n true 2>/dev/null; then
+        sudo mkdir -p "$log_dir" 2>/dev/null || true
+        sudo chmod 755 "$log_dir" 2>/dev/null || true
+    fi
+
+    # If system log dir isn't writable, use user's home directory
+    if [[ ! -w "$log_dir" ]]; then
+        local user_log_dir="$HOME/.local/share/renstar-sysadmin/logs"
+        mkdir -p "$user_log_dir" 2>/dev/null || true
+
+        if [[ -w "$user_log_dir" ]]; then
+            log_debug "Using user log directory: $user_log_dir"
+        fi
     fi
 }
 

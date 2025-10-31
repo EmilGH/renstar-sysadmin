@@ -30,8 +30,22 @@ log_to_file() {
     local log_dir="${LOG_DIR:-/var/log/renstar-sysadmin}"
     local log_file="$log_dir/renstar-$(date +%Y-%m-%d).log"
 
-    if [[ -d "$log_dir" ]]; then
+    # Try system log directory first
+    if [[ -d "$log_dir" ]] && [[ -w "$log_dir" ]]; then
         echo "[$(date '+%Y-%m-%d %H:%M:%S')] $message" >> "$log_file" 2>/dev/null || true
+        return
+    fi
+
+    # Fallback to user's home directory
+    local user_log_dir="$HOME/.local/share/renstar-sysadmin/logs"
+    local user_log_file="$user_log_dir/renstar-$(date +%Y-%m-%d).log"
+
+    if [[ ! -d "$user_log_dir" ]]; then
+        mkdir -p "$user_log_dir" 2>/dev/null || return
+    fi
+
+    if [[ -w "$user_log_dir" ]]; then
+        echo "[$(date '+%Y-%m-%d %H:%M:%S')] $message" >> "$user_log_file" 2>/dev/null || true
     fi
 }
 
