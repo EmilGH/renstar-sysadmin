@@ -19,7 +19,7 @@ A modular, configuration-driven system administration toolkit for Ubuntu systems
 
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/renstar-sysadmin.git
+git clone https://github.com/emilgh/renstar-sysadmin.git
 cd renstar-sysadmin
 
 # Run with default configuration
