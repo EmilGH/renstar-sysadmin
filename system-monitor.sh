@@ -2,6 +2,7 @@
 #
 # Renstar Global LLC - System Health Monitor
 # Run daily/weekly to check system health and generate reports
+# Version: 2.1c
 #
 # Usage: ./system-monitor.sh [--email admin@example.com] [--verbose]
 
@@ -11,7 +12,7 @@ set -euo pipefail
 # CONFIGURATION
 # ============================================================================
 
-SCRIPT_VERSION="1.0"
+SCRIPT_VERSION="2.1c"
 HOSTNAME=$(hostname)
 REPORT_FILE="/tmp/system-report-$(date +%Y%m%d-%H%M%S).txt"
 SEND_EMAIL=false

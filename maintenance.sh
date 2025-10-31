@@ -2,10 +2,12 @@
 #
 # Renstar SysAdmin - Main Maintenance Script
 # Performs system updates and maintenance tasks
+# Version: 2.1c
 #
 
 set -euo pipefail
 
+VERSION="2.1c"
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 CONFIG_FILE="${SCRIPT_DIR}/config/default.conf"
 PROFILE=""
@@ -17,7 +19,7 @@ START_TIME=$(date +%s)
 
 usage() {
     cat << EOF
-Renstar SysAdmin - System Maintenance Tool
+Renstar SysAdmin - System Maintenance Tool v${VERSION}
 
 Usage: $0 [OPTIONS]
 
@@ -108,7 +110,7 @@ source "${SCRIPT_DIR}/lib/logging.sh"
 # ============================================================================
 
 main() {
-    log_header "Renstar Global LLC - System Maintenance Utility"
+    log_header "Renstar Global LLC - System Maintenance Utility v${VERSION}"
 
     log_info "Hostname: $(hostname)"
     log_info "Date: $(date)"

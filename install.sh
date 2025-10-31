@@ -2,10 +2,12 @@
 #
 # Renstar SysAdmin - Main Installation Script
 # Installs packages and configures system based on profile
+# Version: 2.1c
 #
 
 set -euo pipefail
 
+VERSION="2.1c"
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 CONFIG_FILE="${SCRIPT_DIR}/config/default.conf"
 PROFILE=""
@@ -17,7 +19,7 @@ START_TIME=$(date +%s)
 
 usage() {
     cat << EOF
-Renstar SysAdmin - System Installation Tool
+Renstar SysAdmin - System Installation Tool v${VERSION}
 
 Usage: $0 [OPTIONS]
 
@@ -115,7 +117,7 @@ source "${SCRIPT_DIR}/lib/logging.sh"
 # ============================================================================
 
 main() {
-    log_header "Renstar Global LLC - System Installation Utility"
+    log_header "Renstar Global LLC - System Installation Utility v${VERSION}"
 
     if [[ -n "$PROFILE" ]]; then
         log_info "Profile: $PROFILE"

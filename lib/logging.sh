@@ -1,5 +1,6 @@
 #!/bin/bash
 # Logging functions for Renstar SysAdmin
+# Version: 2.1c
 
 # Colors
 if [[ "${COLOR_OUTPUT:-true}" == "true" ]]; then

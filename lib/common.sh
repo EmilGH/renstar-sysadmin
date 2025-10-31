@@ -1,5 +1,6 @@
 #!/bin/bash
 # Common utility functions for Renstar SysAdmin
+# Version: 2.1c
 
 command_exists() {
     command -v "$1" >/dev/null 2>&1
